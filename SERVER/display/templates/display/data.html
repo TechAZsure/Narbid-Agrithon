@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Firebase Data</title>
+</head>
+<body>
+    <h1>Data from Firebase</h1>
+    {% for date, times in data.items %}
+        <h2>Date: {{ date }}</h2>
+        <ul>
+            {% for time, sensor_data in times.items %}
+                <li>Time: {{ time }}</li>
+                <ul>
+                    {% for key, value in sensor_data.items %}
+                        <li>{{ key }}: {{ value }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
